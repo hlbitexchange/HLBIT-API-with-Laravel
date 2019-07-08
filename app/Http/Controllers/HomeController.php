@@ -49,7 +49,7 @@ class HomeController extends Controller
         if(isset($_GET['pair'])){
             $market = $_GET['pair'];
         }
-        $url = 'https://hlbit.trade/api/ticker/'.$market;
+        $url = 'https://staging.hlbit.trade/api/ticker/'.$market;
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $req = curl_exec($ch);
