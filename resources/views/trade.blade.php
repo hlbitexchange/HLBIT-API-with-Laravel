@@ -165,7 +165,12 @@
                                         <tr>
                                             <td>{{ strtoupper($ini->pair) }}</td>
                                             <td>{{ $ini->type }}</td>
-                                            <td>Every {{ $ini->repeat }} Minutes</td>
+                                            <td>@if($ini->repeat >0)
+                                                Every {{ $ini->repeat }} Minutes
+                                                @else
+                                                No Repeat
+                                                @endif
+                                            </td>
                                             <td>{{ $ini->type_24hr }} {{ $ini->value_24hr }} %</td>
                                             <td>{{ $ini->type_price }} {{ $ini->value_price }}</td>
                                             <td>{{ $ini->amount }} % of Balance</td>
