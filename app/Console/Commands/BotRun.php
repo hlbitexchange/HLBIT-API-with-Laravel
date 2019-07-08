@@ -90,9 +90,9 @@ class BotRun extends Command
             }
 
             if($ini->type == 'sell'){
-                $amount = $ini->amount * $crypto_balance / 100;
+                $amount += $ini->amount * $crypto_balance / 100;
             } else {
-                $amount = $ini->amount * $fiat_balance / 100;
+                $amount += $ini->amount * $fiat_balance / 100;
             }
 
             if($ini->type_price != 'none'){
