@@ -70,7 +70,7 @@ class BotRun extends Command
                 $log->save();
             }
             foreach ($crypto['data'] as $its){
-                if($its['code'] == $data['coin']){
+                if($its['code'] == $data['ticker']['coin']){
                     $crypto_balance = $its['balance'];
                 }
             }
@@ -83,7 +83,7 @@ class BotRun extends Command
                 $log->save();
             }
             foreach ($fiat['data'] as $its){
-                if($its['code'] == $data['coin']){
+                if($its['code'] == $data['ticker']['coin']){
                     $fiat_balance = $its['balance'];
                 }
             }
