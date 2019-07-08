@@ -6,6 +6,7 @@ use App\LogActivity;
 use App\Setting;
 use App\User;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 class BotRun extends Command
 {
@@ -149,9 +150,9 @@ class BotRun extends Command
 
             $log = new LogActivity();
             $log->status = $exec['status'];
-            $log->message = $exec['status'] == 1?$exec['data']['message']:$exec['error'];
+            $log->message = $exec['status'] == 1 ? $exec['data']['message']:$exec['error'];
             $log->save();
-
+            Log::info('pair : '.$ini->pair.' | type : '.$ini->type.' | price : '.$price.' | amount : '.$amount);
             if($ini->repeat == 0){
                 $set = Setting::find($ini->id);
                 $set->status = Setting::STATUS_DONE;
