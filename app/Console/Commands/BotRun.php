@@ -152,7 +152,7 @@ class BotRun extends Command
             $log->status = $exec['status'];
             $log->message = $exec['status'] == 1 ? $exec['data']['message']:$exec['error'];
             $log->save();
-            Log::info('pair : '.$ini->pair.' | type : '.$ini->type.' | price : '.$price.' | amount : '.$amount);
+            Log::info('pair : '.$ini->pair.' | type : '.$ini->type.' | price : '.$price.' | amount : '.$amount.' | crypto_balance : '.$crypto_balance.' | fiat_balance'.$fiat_balance);
             if($ini->repeat == 0){
                 $set = Setting::find($ini->id);
                 $set->status = Setting::STATUS_DONE;
