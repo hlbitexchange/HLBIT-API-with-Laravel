@@ -55,8 +55,8 @@ class BotRun extends Command
                 $log->message = $data['error'];
                 $log->save();
             }
-            $value_24hr = $data['last_24h_change'];
-            $value_price = $data['last'];
+            $value_24hr = $data['data']['last_24h_change'];
+            $value_price = $data['data']['last'];
             $crypto_balance = 0;
             $fiat_balance = 0;
             $amount = 0;
